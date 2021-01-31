@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>SorteioApp</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style/styleCss.css"/>
+</head>
+<body>
+
+<nav>
+    <div class="nav-wrapper">
+
+        <a href="/participarSorteio" class="waves-effect waves-light btn">Gerar números</a>
+
+    </div>
+</nav>
+<form class="container" method="post">
+    E-mail: <input type="text" value="" name="email">
+    <button class="waves-effect waves-light btn" type="submit"><i class="material-icons left">find_in_page</i>Buscar
+    </button>
+    <br>
+    <br>
+    <h7>Lista de números gerados para o email informado:</h7>
+    <br>
+    <div th:each="gerado : ${gerados}">
+        <div class="row">
+            <p>############################</p>
+            <p><span class="light-green accent-4" th:text="${gerado.numeroSorteado}"></span></p>
+
+        </div>
+
+    </div>
+</form>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
