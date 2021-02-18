@@ -15,32 +15,16 @@
 
 <nav>
     <div class="nav-wrapper">
-      <br>
+   <br>
         <a href="/participarSorteio" class="waves-effect waves-light btn">Gerar números</a>
+        <br>
+        <a href="/numeros" class="waves-effect waves-light btn">Buscar números gerados</a>
 
     </div>
-
 </nav>
 <form class="container" method="post">
-<br>
-<br>
-<br>
-<br>
-    E-mail: <input type="text" value="" name="email">
-    <button class="waves-effect waves-light btn" type="submit"><i class="material-icons left">find_in_page</i>Buscar
-    </button>
 
-    <br>
-    <h6>Lista de números gerados para o email informado:</h6>
 
-    <div th:each="gerado : ${gerados}">
-        <div class="row">
-
-            <p><span class="light-green accent-4" th:text="${gerado.numeroSorteado}"></span></p>
-
-        </div>
-
-    </div>
 </form>
 <!--JavaScript at end of body for optimized loading-->
 <script type="text/javascript" src="js/materialize.min.js"></script>

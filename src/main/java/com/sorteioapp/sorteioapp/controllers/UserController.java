@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @RestController
+@RequestMapping(value = "/")
 public class UserController {
 
     @Autowired
@@ -22,13 +23,13 @@ public class UserController {
     private SorteioRepository sr;
 
 
+
     @RequestMapping(value = "/participarSorteio", method = RequestMethod.GET)
     public ModelAndView form(){
         ModelAndView mv = new ModelAndView("sorteio");
         return mv;
 
     }
-
 
 
     @RequestMapping(value = "/participarSorteio", method = RequestMethod.POST)
@@ -41,7 +42,6 @@ public class UserController {
             ur.save(user);
             sorteio.setUser(user);
             sr.save(sorteio);
-
         }
 
        ModelAndView mv = new ModelAndView("sorteio");

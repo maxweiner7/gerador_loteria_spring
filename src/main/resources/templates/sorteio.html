@@ -18,21 +18,23 @@
 
 <nav>
     <div class="nav-wrapper">
+<br>
 
-        <a href="/participarSorteio" class="waves-effect waves-light btn">Gerador MEGA-SENA</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <a href="/numeros" class="waves-effect waves-light btn">Buscar
+              <a href="/numeros" class="waves-effect waves-light btn">Buscar
                 números gerados</a>
 
-        </ul>
     </div>
 </nav>
+<br>
+<br>
+<br>
+<br>
 <form class="container" method="post">
     E-mail: <input value="" name="email" type="email" class="validate">
     <button class="waves-effect waves-light btn" type="submit"><i class="material-icons left">autorenew</i>Gerar Numero
     </button>
 
-    <h5>Numero gerado</h5>
+    <h6>Número gerado</h6>
     <div th:each="sorteio : ${sorteio}">
         <div class="row">
             <p><span class="light-green accent-4" th:text="${sorteio.numeroSorteado}"></span></p>

@@ -14,35 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 
-    @Autowired
-    private UserRepository ur;
-
-    @Autowired
-    private SorteioRepository sr;
-
     @RequestMapping("/")
     public ModelAndView index() {
-        return new ModelAndView("sorteio");
+        return new ModelAndView("index");
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ModelAndView form(@Validated User user, Sorteio sorteio) {
-        User users = ur.findByEmail(user.getEmail());
-        if (users != null) {
-            sorteio.setUser(users);
-            sr.save(sorteio);
-        } else {
-            ur.save(user);
-            sorteio.setUser(user);
-            sr.save(sorteio);
 
-        }
-        ModelAndView mv = new ModelAndView("sorteio");
-        mv.addObject("sorteio", sorteio);
-        return mv;
-
-
-    }
 
 
 }
