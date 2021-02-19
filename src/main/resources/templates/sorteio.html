@@ -33,8 +33,11 @@
     E-mail: <input value="" name="email" type="email" class="validate">
     <button class="waves-effect waves-light btn" type="submit"><i class="material-icons left">autorenew</i>Gerar Numero
     </button>
+    <th:block th:include="mensagemValidacao"></th:block>
+
 
     <h6>Número gerado</h6>
+
     <div th:each="sorteio : ${sorteio}">
         <div class="row">
             <p><span class="light-green accent-4" th:text="${sorteio.numeroSorteado}"></span></p>

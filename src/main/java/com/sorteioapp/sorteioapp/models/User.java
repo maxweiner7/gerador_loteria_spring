@@ -2,7 +2,7 @@ package com.sorteioapp.sorteioapp.models;
 
 
 import javax.persistence.*;
-
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Entity
@@ -12,6 +12,7 @@ public class User  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotEmpty
     @Column(unique = true)
     private String email;
 
